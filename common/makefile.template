@@ -1,6 +1,6 @@
 PREFIX:=riscv64-elf-
 OPT ?= -Os
-CFLAGS+=-Icommon -I../common -I../tick-sdk/lib -DMIRROR_APP=1
+CFLAGS+=-Icommon -I../common -I../tick-headers/lib -DMIRROR_APP=1
 CFLAGS+=${OPT} -fno-stack-protector -fno-builtin-memcpy -fno-builtin
 CFLAGS+=-static-libgcc -fdata-sections -ffunction-sections
 CFLAGS+=-g -march=rv32im -mabi=ilp32 -static
