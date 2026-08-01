@@ -1,0 +1,3 @@
+[submodule "tick-headers"]
+	path = tick-headers
+	url = https://github.com/CoderElectronics/tick-headers.git

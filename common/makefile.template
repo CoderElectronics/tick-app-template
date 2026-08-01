@@ -1,0 +1,33 @@
+PREFIX:=riscv64-elf-
+OPT ?= -Os
+CFLAGS+=-Icommon -I../common -I../tick-sdk/lib -DMIRROR_APP=1
+CFLAGS+=${OPT} -fno-stack-protector -fno-builtin-memcpy -fno-builtin
+CFLAGS+=-static-libgcc -fdata-sections -ffunction-sections
+CFLAGS+=-g -march=rv32im -mabi=ilp32 -static
+LDFLAGS:= -T common/linker.ld -nostdlib -Wl,--gc-sections
+LIBS:= -lgcc # needed for softfp
+
+# check if the compiler is installed
+UNAME_S := $(shell uname -s)
+ifeq ($(UNAME_S),Darwin)
+    PREFIX=riscv64-elf-
+    ifeq (,$(shell which ${PREFIX}gcc))
+        $(error "Try brew install riscv64-elf-gcc riscv64-elf-binutils")
+    endif
+else
+    PREFIX=riscv64-unknown-elf-
+    ifeq (,$(shell which ${PREFIX}gcc))
+        $(error "Try apt-get install gcc-riscv64-unknown-elf")
+    endif
+endif
+
+all_template:
+	mkdir -p build
+	${PREFIX}gcc -o build/${PROJECT}.elf ${CFLAGS} ${LDFLAGS} ${SRCS} ${LIBS}
+	@$(PREFIX)objcopy build/${PROJECT}.elf -O binary build/${PROJECT}.bin
+
+disasm_template: all
+	$(PREFIX)objdump -S -d -f build/${PROJECT}.elf
+
+clean_template:
+	rm -rf build
