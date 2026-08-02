@@ -1,0 +1,4 @@
+/Users/AriStehney/Desktop/Coding-Projects/rlcd-watch-project/tick-app-template/build/CMakeFiles/app_elf.dir
+/Users/AriStehney/Desktop/Coding-Projects/rlcd-watch-project/tick-app-template/build/CMakeFiles/disasm.dir
+/Users/AriStehney/Desktop/Coding-Projects/rlcd-watch-project/tick-app-template/build/CMakeFiles/edit_cache.dir
+/Users/AriStehney/Desktop/Coding-Projects/rlcd-watch-project/tick-app-template/build/CMakeFiles/rebuild_cache.dir

@@ -7,7 +7,7 @@
 #include "stdint_target.h"
 
 int main(void) {
-    mirror_println("Hello, World!");
+    println("Hello, World!");
 
     return 0;
 }

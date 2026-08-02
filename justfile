@@ -5,8 +5,13 @@ update:
 
 build:
 	#!/bin/bash
-	make
+	cmake -S . -B build
+	cmake --build build
+
+disasm: build
+	#!/bin/bash
+	cmake --build build --target disasm
 
 clean:
 	#!/bin/bash
-	make clean
+	rm -rf build

@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/AriStehney/Desktop/Coding-Projects/rlcd-watch-project/tick-app-template/common/crt0.S
+uvm32_sys.h
+/Users/AriStehney/Desktop/Coding-Projects/rlcd-watch-project/tick-app-template/common/uvm32_sys.h
+
+/Users/AriStehney/Desktop/Coding-Projects/rlcd-watch-project/tick-app-template/tick-headers/lib/uvm32_sys.h
+
